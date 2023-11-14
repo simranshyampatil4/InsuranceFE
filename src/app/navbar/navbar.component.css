@@ -1,0 +1,48 @@
+.navbar {
+    background-color: #4CAF50;
+  }
+  
+  .navbar-brand, .nav-link {
+    color: #fff !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff;
+  }
+  
+.logo-img{
+    height: 100px;
+    width: 180px;
+
+}  
+/* .nav-item {
+ text-align: right;
+ float: right;
+} */
+/* Add this to your styles.css or styles.scss */
+.navbar-nav {
+    margin-left: auto;
+  }
+  
+  .navbar-nav .nav-item {
+    margin-left: 10px; /* Optional: Add some spacing between navigation items */
+  }
+  /* Add this to your component's CSS file, e.g., navbar.component.css */
+.navbar-nav .nav-item a.nav-link {
+    color: #fff; /* Set the default text color */
+    transition: color 1s ease-in-out; /* Add smooth transition effect */
+  
+    /* Optional: Customize other styles for the link */
+    text-decoration: none;
+  }
+  
+  .navbar-nav .nav-item a.nav-link:hover {
+    color: #ffd700; /* Set the text color on hover */
+    font-weight: bold;
+    /* Optional: Add other styles for the hover effect */
+  }
+
+  /* Add this to your component's CSS file, e.g., navbar.component.css */
+
+
+  

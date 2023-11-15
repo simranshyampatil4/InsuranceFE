@@ -1,6 +1,6 @@
 <!-- navbar.component.html -->
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <div class="container">
+    <div class="container-fluid">
       <a class="navbar-brand" routerLink="/">
         <img src="assets/insuranceLogo.png" alt="Logo" class="logo-img">
       </a>
@@ -24,7 +24,7 @@
           </li>
           <!-- Dropdown Menu for Insurance Plans -->
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="insuranceDropdown" role="button" data-toggle="dropdown"
+            <a class="nav-link dropdown-toggle" routerLink="/insurance-plans" href="#" id="insuranceDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Insurance Plans
             </a>
@@ -40,7 +40,6 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/contact-us">Contact Us</a>
           </li>
-          <!-- Add more navigation items as needed -->
         </ul>
       </div>
     </div>

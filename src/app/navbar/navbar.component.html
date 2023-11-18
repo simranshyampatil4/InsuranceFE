@@ -17,23 +17,23 @@
             <a class="nav-link" routerLink="/about">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/services">Services</a>
+            <a class="nav-link" routerLink="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/login">Login/Register</a>
+            <a class="nav-link" routerLink="/register">Register</a>
           </li>
           <!-- Dropdown Menu for Insurance Plans -->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" routerLink="/insurance-plans" href="#" id="insuranceDropdown" role="button" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
+          <li ngbDropdown class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="/insurance-plans" id="insuranceDropdown" role="button"
+               ngbDropdownToggle aria-haspopup="true" aria-expanded="false">
               Insurance Plans
             </a>
-            <div class="dropdown-menu" aria-labelledby="insuranceDropdown">
-              <a class="dropdown-item" href="#">Protection Plan</a>
-              <a class="dropdown-item" href="#">Child Plan</a>
-              <a class="dropdown-item" href="#">Saving Plan</a>
-              <a class="dropdown-item" href="#">Growth Plan</a>
-              <a class="dropdown-item" href="#">Group Plan</a>
+            <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="insuranceDropdown">
+              <a ngbDropdownItem class="dropdown-item" routerLink="/insurance-plans/protection-plan">Protection Plan</a>
+              <a ngbDropdownItem class="dropdown-item" href="#">Child Plan</a>
+              <a ngbDropdownItem class="dropdown-item" href="#">Saving Plan</a>
+              <a ngbDropdownItem class="dropdown-item" href="#">Growth Plan</a>
+              <a ngbDropdownItem class="dropdown-item" href="#">Group Plan</a>
             </div>
           </li>
           <!-- End Dropdown Menu -->

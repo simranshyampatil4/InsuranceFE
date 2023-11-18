@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
 import { LoginComponent } from './login/login.component';
 import { InsurancePlansComponent } from './insurance-plans/insurance-plans.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProtectionPlanComponent } from './protection-plan/protection-plan.component';
 
 @NgModule({
   declarations: [
@@ -18,16 +21,19 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     HomeComponent,
     AboutComponent,
-    ServicesComponent,
     LoginComponent,
     InsurancePlansComponent,
     ContactUsComponent,
-    FooterComponent
+    FooterComponent,
+    RegisterComponent,
+    ProtectionPlanComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

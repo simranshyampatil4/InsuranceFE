@@ -14,6 +14,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProtectionPlanComponent } from './protection-plan/protection-plan.component';
+import { WeatherInfoComponent } from './weather-info/weather-info.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,14 +28,16 @@ import { ProtectionPlanComponent } from './protection-plan/protection-plan.compo
     ContactUsComponent,
     FooterComponent,
     RegisterComponent,
-    ProtectionPlanComponent
+    ProtectionPlanComponent,
+    WeatherInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

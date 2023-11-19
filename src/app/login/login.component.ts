@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginService } from '../services/login.service';
+import { HttpErrorResponse } from '@angular/common/http';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -9,8 +12,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-
-  constructor(private fb: FormBuilder, private router: Router) {
+  myToken:any;
+  role:any;
+  user:any;
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private auth: LoginService,
+    private data: DataService
+  ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3)]],
       password: ['', [Validators.required, Validators.minLength(6)]]
@@ -19,8 +29,35 @@ export class LoginComponent {
 
   onLoginSubmit() {
     if (this.loginForm.valid) {
-      // Handle login form submission
-      console.log('Login Form Submitted:', this.loginForm.value);
+      const formData = {
+        userName: this.loginForm.get('username')!.value,
+        password: this.loginForm.get('password')!.value
+      };
+
+      this.auth.login(formData).subscribe({
+        next: (response) => {
+          this.myToken = response.headers.get('jwt');
+          this.myToken=JSON.parse(this.myToken)
+          console.log(this.myToken);
+        
+          localStorage.setItem('token', this.myToken);
+          this.user = response.body;
+          this.data.userId=this.user.userId
+          this.data.userName=this.user.userName
+          // Check if 'user' is not null or undefined before accessing properties
+          debugger
+          if (this.user.roleName == 'Admin') {
+            this.router.navigateByUrl('/weather');
+          } else {
+            this.router.navigateByUrl('/employee');
+          }
+        },
+        
+        error: (errorResponse: HttpErrorResponse) => {
+          console.log(errorResponse);
+          // Handle login error, show error messages, or take appropriate action
+        }
+      });
     } else {
       // Form is invalid, show error messages or take appropriate action
       console.log('Invalid Form');
